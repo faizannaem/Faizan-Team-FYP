@@ -1,0 +1,647 @@
+/* Base styles for common elements */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Top */
+.header-top {
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+
+/* Container for Header elements */
+.header-seb-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+
+/* Logo Section */
+.cla-logo {
+  flex: 1 1;
+  text-align: center;
+  position: relative;
+  right: 30vh;
+}
+
+.cla-logo img {
+  height: 50px;
+  max-width: 100%; /* Ensure logo resizes within container */
+}
+/* ******************************* */
+/* ****** Ads Discount *******  */
+/* ************************* *******/
+.ads-discount-main-container {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #00aab3;
+  color: #fff;
+  text-align: center;
+  line-height: 80px;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 10px auto; /* Center the container */
+  border-radius: 10px;
+}
+
+.ads-discount-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: slide 10s linear infinite;
+  text-align: center;
+}
+
+.ads-discount-container span {
+  display: flex;
+  padding: 0px 20px;
+  font-size: 24px;
+  animation: fadein 1s;
+  text-align: center;
+  position: relative;
+  bottom: 14px;
+}
+
+/* Keyframes for slide animation */
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* ******************************* */
+/* ******Login Logouts *******  */
+/* ************************* *******/
+.login-navbar-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.login-icon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.login-container span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.login-container:hover,
+.login-icon:hover,
+span:hover {
+  color: #00aab3;
+  transform: scale(0.98);
+}
+
+.user-profile {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 17px;
+  border-radius: 10px;
+}
+
+.user-profile .user-name {
+  color: #000;
+}
+
+.logout-btn {
+  background-color: #f8f9fa;
+  border: none;
+  width: 100%;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  transform: scale(0.98);
+  background-color: #eaeaea;
+}
+
+.user-profile h2 {
+  margin: 0 10px;
+  font-size: 16px; /* Adjust font size */
+}
+
+.profile-menu {
+  position: absolute;
+  top: 58px;
+  right: -14px;
+  width: calc(100% + 78px);
+  background: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-menu::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  transform: rotate(45deg);
+  box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+.profile-menu p {
+  margin: 0 0 10px 0;
+}
+
+.profile-menu button {
+  background-color: #f8f9fa;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.profile-menu button:hover {
+  background-color: #eaeaea;
+  transform: scale(0.9);
+}
+/* ******************************* */
+/* ******Responsiveness *******  */
+/* ************************* *******/
+
+@media (max-width: 1200px) {
+  .header-seb-container {
+    max-width: 100%;
+  }
+  .cla-logo img {
+    height: 40px;
+  }
+  .ads-discount-main-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-seb-container {
+    flex-direction: column;
+  }
+  .cla-logo,
+  .login-navbar-container {
+    justify-content: center;
+  }
+  .login-navbar-container {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cla-logo img {
+    height: 35px;
+  }
+  .ads-discount-container span {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-top {
+    padding: 10px;
+  }
+  .cla-logo img {
+    height: 30px;
+  }
+  .ads-discount-main-container {
+    height: 40px;
+    line-height: 60px;
+  }
+  .ads-discount-container span {
+    font-size: 18px;
+  }
+  .login-icon {
+    font-size: 20px;
+  }
+  .login-container span {
+    font-size: 14px;
+  }
+  .user-profile {
+    padding: 8px 12px;
+  }
+  .user-profile h2 {
+    font-size: 14px;
+  }
+}
+
+/* ******************************* */
+/* ******User Login Logout *******  */
+/* ************************* *******/
+.login-navbar-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.login-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 15vh;
+}
+
+.login-btn:hover {
+  background-color: #f0f0f0;
+  transform: scale(0.98);
+}
+
+.login-btn .login-icon span {
+  margin-left: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(1, 184, 216, 0.98);
+}
+
+.user-profile {
+  position: relative;
+  background: none;
+  left: 100px;
+}
+
+.user-profile img {
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.user-profile img:hover {
+  transform: scale(1.05);
+}
+
+.user-profile-manu {
+  position: absolute;
+  top: 81px;
+  right: 11px;
+  width: 220px;
+  background: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 7px 2px rgb(0 138 161 / 98%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.user-profile-manu:hover {
+  box-shadow: 0 2px 7px 2px rgba(1, 184, 216, 0.98);
+}
+
+.user-profile-manu::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  transform: rotate(45deg);
+  box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+.user-profile-manu h2,
+.user-profile-manu p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border: none;
+  width: 100%;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #eaeaea;
+  transform: scale(0.98);
+}
+
+.logout-icon {
+  margin-left: 5px;
+}
+/* ************************* */
+/********** Navbar*********  */
+/* ************************* */
+.header-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  transition: top 0.3s ease-in-out;
+}
+
+.navbar-top-container {
+  position: fixed;
+  top: 50px; /* Align with the bottom of the header */
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  transition: top 0.3s ease-in-out;
+}
+
+.navbar-main-container {
+  position: fixed;
+  top: 90px; /* Adjusted to stack under navbar-top-container */
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  transition: top 0.3s ease-in-out;
+}
+
+.header-hidden {
+  top: -100px; /* Completely hide the header */
+}
+
+.navbar-hidden {
+  top: -200px; /* Completely hide the navbar */
+}
+
+.header-top-visible {
+  top: 0;
+}
+
+.navbar-visible {
+  top: 90px; /* Align with the bottom of the visible header */
+}
+
+.navbar-sub-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 10px;
+  background: #232323;
+  text-align: center;
+  transition: top 0.3s ease-in-out;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+  top: 0px;
+  left: 275px;
+  z-index: 1;
+}
+
+.hamburger svg {
+  color: #fff;
+}
+.hamburger .humburger-close-btn {
+  position: absolute;
+  top: -111px;
+  right: 242px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.nav ul li {
+  margin: 0 30px;
+}
+
+.nav ul li a {
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00aab3;
+  transition: width 0.3s ease;
+}
+
+.nav ul li a:hover::before {
+  width: 100%;
+}
+
+.nav ul li .shop-icon {
+  font-size: 40px;
+  color: #fff;
+}
+
+.cart-badge {
+  position: relative;
+  top: -37px;
+  right: 20px;
+  background-color: #00aab3;
+  color: #fff;
+  border-radius: 50%;
+  padding: 3px 5px;
+  font-size: 10px;
+}
+
+@media (max-width: 768px) {
+  .header-seb-container {
+    flex-direction: column;
+  }
+
+  .search-bar-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .search-form {
+    width: 100%;
+  }
+
+  .search-form input {
+    flex: 1;
+    margin-right: 0;
+  }
+
+  .login-navbar-container {
+    width: 100%;
+    margin-top: 10px;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav ul li {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .nav ul li .link {
+    font-size: 16px;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+  .navbar-visible {
+    top: 163px;
+  }
+  .header-hidden {
+    top: 0px;
+  }
+}
+
+@media (max-width: 474px) {
+  .navbar-sub-container {
+    position: relative;
+    top: 43px;
+  }
+  .navbar-top-container {
+    top: 40px; /* Reduce the top position */
+  }
+
+  .navbar-main-container {
+    top: 70px; /* Adjusted to stack under navbar-top-container */
+  }
+
+  .hamburger {
+    left: 172px; /* Adjust position for smaller screens */
+  }
+
+  .hamburger .humburger-close-btn {
+    top: -86px; /* Adjust position for smaller screens */
+    right: 140px;
+  }
+
+  .nav ul li {
+    margin: 5px 0; /* Reduce margin */
+  }
+
+  .nav ul li a {
+    font-size: 12px; /* Smaller font size */
+  }
+
+  .nav ul li .shop-icon {
+    font-size: 30px; /* Smaller icon size */
+  }
+
+  .cart-badge {
+    top: -15px; /* Adjust badge position */
+    right: -15px;
+    padding: 3px 6px;
+    font-size: 10px; /* Smaller font size */
+  }
+
+  .navbar-visible {
+    top: 120px; /* Adjust for smaller screens */
+  }
+
+  .header-hidden {
+    top: 0px;
+  }
+}

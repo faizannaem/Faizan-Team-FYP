@@ -1,0 +1,179 @@
+/* Footer content container */
+.footer {
+  border-top: 1px solid #eee;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 2rem auto;
+  gap: 16vh;
+}
+
+/* Individual footer sections */
+.footer-section {
+  flex: 1; /* Allow each section to grow and shrink equally */
+  margin-right: 20px; /* Space between sections */
+}
+
+/* Logo and description */
+.logo img {
+  width: 150px;
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.logo img:hover {
+  transform: scale(1.1); /* Slightly enlarge the logo on hover */
+}
+
+.logo p {
+  display: block;
+  margin: 5vh 0vh;
+  transition: transform 0.3s ease;
+}
+
+/* Links */
+.links ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* No padding */
+}
+
+.links ul li {
+  margin-bottom: 10px;
+}
+
+.links a {
+  color: #333;
+  text-decoration: none;
+  position: relative;
+}
+
+.links a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0; /* Modified width to start from 0 */
+  height: 2px;
+  background-color: #00aab3; /* Changed background color to #00aab3 */
+  transition: width 0.3s ease; /* Removed left transition for simplicity */
+}
+
+.links a:hover::before {
+  width: 100%; /* Modified width to cover the entire link */
+}
+
+/* Contact form */
+.contact-form h2 {
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 20px; /* Add bottom margin */
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.contact p {
+  display: flex;
+  margin: 2vh 0vh;
+}
+
+.contact p span {
+  margin-left: 1vh;
+}
+
+.contact p span:hover {
+  color: #00aab3;
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 6vh;
+  margin: 3vh auto;
+}
+
+.socials a {
+  display: flex;
+  text-decoration: none;
+  background-color: #383535;
+  color: #fff;
+  padding: 2vh 2vh;
+  border-radius: 5vh;
+  text-align: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  color: #383535;
+  background-color: #00aab3;
+  transform: scale(1.1);
+}
+
+/* Copyright and social links container */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright {
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-section {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 20px 0;
+  }
+
+  .footer-section {
+    margin-bottom: 10px;
+  }
+
+  .socials {
+    flex-direction: column;
+    gap: 1vh;
+  }
+
+  .socials a {
+    padding: 1vh 1vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    max-width: 90%;
+  }
+
+  .footer-section {
+    margin-bottom: 5px;
+  }
+
+  .socials {
+    gap: 0.5vh;
+  }
+
+  .socials a {
+    padding: 0.5vh 0.5vh;
+  }
+}
